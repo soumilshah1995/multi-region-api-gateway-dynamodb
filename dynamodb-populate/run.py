@@ -9,8 +9,8 @@ from datetime import datetime
 from pynamodb.models import Model
 from pynamodb.attributes import *
 
-AWS_ACCESS_KEY = "AKIA4TYY74BHW7EUHY7Q"
-AWS_SECRET_KEY = "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"
+AWS_ACCESS_KEY = "XXXXXXXX"
+AWS_SECRET_KEY = "XXXXX"
 
 
 region = ['us-east-1', 'us-west-1']
