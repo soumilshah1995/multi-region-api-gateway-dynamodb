@@ -1,0 +1,44 @@
+org: scientist1995
+app: demo
+service: multi-region-apis
+useDotenv: true
+frameworkVersion: '3'
+
+
+provider:
+  name: aws
+  runtime: python3.6
+
+plugins:
+  - serverless-python-requirements
+  - serverless-dotenv-plugin
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    zip: true
+
+package:
+  exclude:
+    - '**/*'
+  include:
+    - '*.py'
+    - 'pynamodb'
+
+functions:
+
+  getUsers:
+    handler: handler.get_record
+    events:
+      - http:
+          path: /get_record
+          method: post
+          private: false
+
+  healthCheck:
+    handler: health.check
+    events:
+      - http:
+          path: /health
+          method: get
+          private: false
