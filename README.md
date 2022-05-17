@@ -33,5 +33,10 @@ cd microservice
 > sls plugin install -n serverless-python-requirements
 > npm i -D serverless-dotenv-plugin
 
-sls deploy
+##### make sure to change ENV VAR too 
+sls deploy --region='us-east-1'
+
+##### make sure to change ENV VAR too 
+sls deploy --region='us-west-2'
+
 ```
